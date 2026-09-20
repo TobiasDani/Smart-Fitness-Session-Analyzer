@@ -1,0 +1,1 @@
+Smart Fitness Session Analyzer for Python course
