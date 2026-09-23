@@ -41,12 +41,6 @@ cd Smart-Fitness-Session-Analyzer
 python main.py
 ```
 
-If your system uses `python3` instead, use:
-
-```bash
-python3 main.py
-```
-
 Run the tests with:
 
 ```bash
@@ -74,4 +68,4 @@ Explanation: The session shows a clear drop in heart rate and activity toward th
 - The classification is rule-based and intentionally simple.
 - It is designed for the simulated dataset and assignment requirements, not for real-world medical or training analysis.
 - Recovery detection depends on comparing the early and late parts of the session, so very short sessions may be less reliable.
-
+- If one value in an observation is missing, or outside the accepted range, the entire observation is rejected rather than partially used.
