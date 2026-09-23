@@ -143,15 +143,6 @@ class Session:
             [obs.activity_level for obs in second_half],
         )
 
-        second_avg_hr = calculate_average([obs.heart_rate for obs in second_half])
-
-        if (
-            heart_drop > 8
-            and activity_drop > 0.10
-            and second_avg_hr <= self.participant.baseline_heart_rate + 15
-        ):
-            return True
-
-        return False
+        return heart_drop > 8 and activity_drop > 0.10
 
     
