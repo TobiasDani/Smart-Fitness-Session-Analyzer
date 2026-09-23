@@ -9,19 +9,18 @@ class Observation:
 
 
     def is_valid(self):
-        if self.timestamp < 0:
+        if not isinstance(self.timestamp, (int, float)) or self.timestamp < 0:
             return False
-        if self.heart_rate is None or not 35 <= self.heart_rate <= 205:
+        if self.heart_rate is None or not isinstance(self.heart_rate, (int, float)) or not 35 <= self.heart_rate <= 205:
             return False
-        if self.skin_response is None or self.skin_response < 0:
+        if self.skin_response is None or not isinstance(self.skin_response, (int, float)) or self.skin_response < 0:
             return False
-        if self.temperature is None or not 25 <= self.temperature <= 42:
+        if self.temperature is None or not isinstance(self.temperature, (int, float)) or not 25 <= self.temperature <= 42:
             return False
-        if self.activity_level is None or not 0 <= self.activity_level <= 1:
+        if self.activity_level is None or not isinstance(self.activity_level, (int, float)) or not 0 <= self.activity_level <= 1:
             return False
-        if self.signal_quality is None or not 0 <= self.signal_quality <= 1:
+        if self.signal_quality is None or not isinstance(self.signal_quality, (int, float)) or not 0 <= self.signal_quality <= 1:
             return False
 
         return True
     
-
