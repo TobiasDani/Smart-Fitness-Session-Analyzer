@@ -19,6 +19,7 @@ This project reads simulated fitness data, validates each measurement window, co
 - Composition is used instead of inheritance. A `Session` contains a `Participant`, and a `Session` also contains many `Observation` objects. This matches the real structure of the data and keeps the code clearer and easier to maintain.
 - Encapsulation is shown through the protected-style `classification` field in `Session`, which is controlled through a property.
 - A `staticmethod` is used in `Participant` to validate baseline values without creating an instance.
+- Inheritance and method overriding are not used because the application has no meaningful "is-a" relationship between participants, observations, sessions and reports. Composition is more suitable for this data model.
 
 ## Classification and assumptions
 The program uses a simple rule-based system designed for the simulated dataset:
