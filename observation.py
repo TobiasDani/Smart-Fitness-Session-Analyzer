@@ -6,3 +6,22 @@ class Observation:
         self.temperature = temperature
         self.activity_level = activity_level
         self.signal_quality = signal_quality
+
+
+    def is_valid(self):
+        if self.timestamp < 0:
+            return False
+        if self.heart_rate is None or not 35 <= self.heart_rate <= 205:
+            return False
+        if self.skin_response is None or self.skin_response < 0:
+            return False
+        if self.temperature is None or not 25 <= self.temperature <= 42:
+            return False
+        if self.activity_level is None or not 0 <= self.activity_level <= 1:
+            return False
+        if self.signal_quality is None or not 0 <= self.signal_quality <= 1:
+            return False
+
+        return True
+    
+

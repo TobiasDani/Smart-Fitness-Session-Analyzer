@@ -16,12 +16,12 @@ def main():
         number_of_windows=10,
     )
 
-    profile, session = new_session(profile, observations)
+    profile, session = new_fitness_session(profile, observations)
 
-    print(session.observations[3].timestamp)
+    print(session.calculate_summary())
 
 
-def new_session(profile_in, observations_in):
+def new_fitness_session(profile_in, observations_in):
     """Creates a new session bla bla
 
     Args:
@@ -38,14 +38,14 @@ def new_session(profile_in, observations_in):
         for obs in observations_in
     ]
 
-    session = Session()
+    session = Session(profile)
 
     for obs in observations:
         session.add_single_observation(obs) 
 
     return profile, session
 
-    
+
 
 
 
