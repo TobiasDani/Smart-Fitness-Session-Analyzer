@@ -25,7 +25,7 @@ This project reads simulated fitness data, validates each measurement window, co
 
 The program uses a simple rule-based system designed for the simulated dataset:
 - `resting`: average activity is below 0.2 and average heart rate is no more than 8 BPM above baseline
-- `moderate activity`: average activity is at least 0.2 without meeting the high activity threshold
+- `moderate activity`: activity is above the resting range without meeting the high activity threshold
 - `high activity`: average activity is at least 0.65 or average heart rate is at least 30 BPM above baseline
 - `recovering`: heart rate drops by more than 8 BPM and activity drops by more than 0.10 between the first and second half of the session
 - `insufficient data`: fewer than 3 valid observations or average signal quality is below 0.6
@@ -41,6 +41,12 @@ Clone the repository and run it from the project root:
 git clone https://github.com/TobiasDani/Smart-Fitness-Session-Analyzer.git
 cd Smart-Fitness-Session-Analyzer
 python main.py
+```
+
+If your system uses `python3` instead, run:
+
+```bash
+python3 main.py
 ```
 
 Run the tests with:
